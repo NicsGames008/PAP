@@ -24,7 +24,7 @@ public class PlayerLook : MonoBehaviour
         //aplicar ao cameraTransform
         cam.transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
 
-        //roda o persunaguem para olhar para os lados
+        //roda o personaguem para olhar para os lados
         transform.Rotate(Vector3.up * (mouseX * Time.deltaTime) * xSensitivity);
     }
 }
