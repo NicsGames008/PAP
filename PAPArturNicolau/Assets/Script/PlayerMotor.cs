@@ -13,6 +13,7 @@ public class PlayerMotor : MonoBehaviour
     public float gravity = -9.8f;
     public float speed = 5f;
     public float jumpHeight = 3f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -44,6 +45,7 @@ public class PlayerMotor : MonoBehaviour
         Debug.Log(playerVelocity.y);
     }
 
+    //Faz o persunaguem saltar
     public void Jump()
     {
         if (isGrounded)
@@ -52,6 +54,7 @@ public class PlayerMotor : MonoBehaviour
         }
     }
 
+    //Aumenta a velocidade
     public void Sprint()
     {
         sprinting = !sprinting;

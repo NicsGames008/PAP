@@ -20,9 +20,13 @@ public class InputManager : MonoBehaviour
         onFoot = playerInput.OnFoot;
 
         motor = GetComponent<PlayerMotor>();
-        onFoot.Jump.performed += ctx => motor.Jump();
         look = GetComponent<PlayerLook>();
 
+
+        //Sabe se o character esta a correr
+        onFoot.Jump.performed += ctx => motor.Jump();
+
+        //Saber se o character esta a correr
         onFoot.Sprint.performed += ctx => motor.Sprint();
         onFoot.Sprint.canceled += ctx => motor.Sprint();
 
