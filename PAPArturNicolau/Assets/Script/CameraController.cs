@@ -1,3 +1,4 @@
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class CameraController : MonoBehaviour
@@ -18,8 +19,21 @@ public class CameraController : MonoBehaviour
     private float pitch = 2f;
 
     //Receber qual o valor para rodar a camare
-    public float yamSpeed = 100f;
+    public float sensX;
+    private float sensY;
     private float yamInput = 0f;
+    private float yRotation;
+    private float xRotation;
+
+    public Camera cam;
+    public float xSensitivity = 30f;
+    public float ySensitivity = 30f;
+
+    public void Start()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
 
     void LateUpdate()
     {
@@ -35,8 +49,21 @@ public class CameraController : MonoBehaviour
         //FAz com que o Scroll Wheel do rato de zoom ou tire
         currentZoom -= Input.GetAxis("Mouse ScrollWheel") * zoomSpeed;
         currentZoom = Mathf.Clamp(currentZoom, minZoom, maxZoom);
+    }
 
+    public void ProcessLook(Vector2 input)
+    {
+        float mouseX = input.x;
+        float mouseY = input.y;
 
-        yamInput -= Input.GetAxis("Horizontal") * yamSpeed * Time.deltaTime;
+        //calcular a rotação da camera para olhar para cima e baixo
+        xRotation -= (mouseY * Time.deltaTime) * ySensitivity;
+        xRotation = Mathf.Clamp(xRotation, -80f, 80f);
+
+        //aplicar ao cameraTransform
+        cam.transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+
+        //roda o personaguem para olhar para os lados
+        transform.Rotate(Vector3.up * (mouseX * Time.deltaTime) * xSensitivity);
     }
 }

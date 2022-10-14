@@ -12,8 +12,15 @@ public class InputManager : MonoBehaviour
 
     private PlayerMotor motor;
     private PlayerLook look;
+    private CameraController tps;
 
     // Start is called before the first frame update
+    public void Start()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
+
     void Awake()
     {
         playerInput = new PlayerInput();
