@@ -30,7 +30,7 @@ public class InputManager : MonoBehaviour
         look = GetComponent<PlayerLook>();
 
 
-        //Sabe se o character esta a correr
+        //Sabe se o character esta a saltar
         onFoot.Jump.performed += ctx => motor.Jump();
 
         //Saber se o character esta a correr
@@ -39,7 +39,6 @@ public class InputManager : MonoBehaviour
 
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         //Diz ao PlayerMotor para mover usando o valor do movement action

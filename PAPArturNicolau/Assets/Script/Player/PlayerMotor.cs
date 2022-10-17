@@ -23,9 +23,7 @@ public class PlayerMotor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        isGrounded = controller.isGrounded;
-
-  
+        isGrounded = controller.isGrounded;  
     }
 
     //recebe os inputs do InputManager.cs e aplicao ao CharecterController
