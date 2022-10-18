@@ -26,8 +26,8 @@ public class ThirdpersonMovement : MonoBehaviour
 
     public void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        //Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = false;
 
 
         controller = GetComponent<CharacterController>();
@@ -102,26 +102,4 @@ public class ThirdpersonMovement : MonoBehaviour
         #endregion
 
     }
-
-    private void FixedUpdate()
-    {
-        
-    }
-
-
-    //void Awake()
-    //{
-
-
-    //    motor = GetComponent<PlayerMotor>();
-    //    look = GetComponent<PlayerLook>();
-
-
-    //    //Sabe se o character esta a saltar
-    //    onFoot.Jump.performed += ctx => motor.Jump();
-
-
-
-    //}
-
 }
