@@ -31,8 +31,8 @@ public class CameraController : MonoBehaviour
 
     public void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        //Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = false;
     }
 
     void LateUpdate()

@@ -20,6 +20,8 @@ public class Inventory : MonoBehaviour
     public delegate void OnItemChange();
     public OnItemChange onItemChangecallback;
 
+    public GameObject player;
+
     //Lista de todos os items que ha
     public List<Item> items = new List<Item>();
 
@@ -53,6 +55,11 @@ public class Inventory : MonoBehaviour
     public void Remove(Item item)
     {
         items.Remove(item);
+
+
+        Debug.Log(player.transform + " aaaaaaaaaaaaaaaaaa");
+
+        Instantiate(item, player.transform);
 
         if (onItemChangecallback != null)
             onItemChangecallback.Invoke();

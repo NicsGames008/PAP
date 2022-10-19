@@ -17,8 +17,8 @@ public class InputManager : MonoBehaviour
     // Start is called before the first frame update
     public void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        //Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = false;
     }
 
     void Awake()

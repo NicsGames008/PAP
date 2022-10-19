@@ -16,8 +16,6 @@ public class ThirdpersonMovement : MonoBehaviour
     private PlayerInput playerInput;
     private PlayerInput.OnFootActions onFoot;
 
-    private PlayerMotor motor;
-    private PlayerLook look;
 
     private bool isGrounded;
     private Vector3 playerVelocity;
