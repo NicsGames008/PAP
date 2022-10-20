@@ -56,11 +56,6 @@ public class Inventory : MonoBehaviour
     {
         items.Remove(item);
 
-
-        Debug.Log(player.transform + " aaaaaaaaaaaaaaaaaa");
-
-        Instantiate(item, player.transform);
-
         if (onItemChangecallback != null)
             onItemChangecallback.Invoke();
     }

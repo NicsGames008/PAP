@@ -12,4 +12,12 @@ public class Item : ScriptableObject
     public Sprite icon = null;
     //Sabe se é default
     public bool isDefaulItem = false;
+
+    public virtual void Use()
+    {
+        //Usa o item
+
+        Debug.Log("Usou o item " + name);
+    }
+
 }

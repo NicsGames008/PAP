@@ -51,4 +51,13 @@ public class InventorySlot : MonoBehaviour
         //Quando chamado, chama o metedo do iventario e diz para remover X item
         Inventory.instance.Remove(item);
     }
+
+    //Quando o utilizador carrega apra usar o itme este metedo é ativado
+    public void OnUseItem()
+    {
+        if (item != null)
+        {
+            item.Use();
+        }
+    }
 }

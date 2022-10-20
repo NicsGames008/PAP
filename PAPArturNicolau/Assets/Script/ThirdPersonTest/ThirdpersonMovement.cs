@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class ThirdpersonMovement : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class ThirdpersonMovement : MonoBehaviour
     public float turnSmoothTime = 0.1f;
 
     private float turnSmoothVelocity;
+
+    public GameObject canvas;
 
     //////////////////////////////
 
@@ -24,8 +27,8 @@ public class ThirdpersonMovement : MonoBehaviour
 
     public void Start()
     {
-        //Cursor.lockState = CursorLockMode.Locked;
-        //Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
 
 
         controller = GetComponent<CharacterController>();
@@ -34,6 +37,9 @@ public class ThirdpersonMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (canvas.activeSelf)
+            return;
+
         playerInput = new PlayerInput();
         onFoot = playerInput.OnFoot;
 
@@ -79,13 +85,7 @@ public class ThirdpersonMovement : MonoBehaviour
 
         #endregion
 
-        #region Gravidade
-        playerVelocity.y += gravity * Time.deltaTime;
-        if (isGrounded && playerVelocity.y < 0)
-            playerVelocity.y = -2f;
 
-        controller.Move(playerVelocity * Time.deltaTime);
-        #endregion
 
         #region Saltar
         //Ve se carregou na tecla de saltar
@@ -99,5 +99,16 @@ public class ThirdpersonMovement : MonoBehaviour
         } 
         #endregion
 
+    }
+
+    private void FixedUpdate()
+    {
+        #region Gravidade
+        playerVelocity.y += gravity * Time.deltaTime;
+        if (isGrounded && playerVelocity.y < 0)
+            playerVelocity.y = -2f;
+
+        controller.Move(playerVelocity * Time.deltaTime);
+        #endregion
     }
 }

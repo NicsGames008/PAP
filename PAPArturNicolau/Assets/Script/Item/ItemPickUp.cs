@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ItemPickUp : MonoBehaviour
@@ -22,7 +19,7 @@ public class ItemPickUp : MonoBehaviour
 
             //SE foi apanhado destroi o msm
             if (wasPickUp)
-            Destroy(gameObject);
+                Destroy(gameObject);
 
         }
     }

@@ -9,15 +9,20 @@ public class InventoryUI : MonoBehaviour
     //Associa ao Inventario
     Inventory inventory;
 
+    public GameObject inventoryUI;
+
     //Guarda todos os slots no Vertice
     InventorySlot[] slots;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
+
         inventory = Inventory.instance;
 
+        //Faz com que o inventarios fique inveivel loco de inicio
+        //inventoryUI.SetActive(!inventoryUI.activeSelf);
 
         //Quando o iventario muda muda o ui junto
         inventory.onItemChangecallback += UpdateUI;
@@ -29,7 +34,25 @@ public class InventoryUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //Quando o utilizador carregar na tecla responsavel por abrir o iventario...
+        if (Input.GetButtonDown("Inventory"))
+        {
+            //Ve se o rato esta preso no meu do ecra
+            if (Cursor.lockState == CursorLockMode.None)
+            {
+                Cursor.lockState = CursorLockMode.Locked;
+            }
+            else if (Cursor.lockState == CursorLockMode.Locked)
+            {
+                Cursor.lockState = CursorLockMode.None;
+            }
+
+            //Torna o rato invisivel ou visivel, depende de como estava antes
+            Cursor.visible = !Cursor.visible;
+
+            //Mostra o canvas do msm
+            inventoryUI.SetActive(!inventoryUI.activeSelf);
+        }
     }
 
     void UpdateUI()
