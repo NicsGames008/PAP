@@ -11,8 +11,9 @@ public class InventorySlot : MonoBehaviour
 
     //Abre caminho para o butão
     public Button removeButton;
+    public GameObject player; 
 
-    //Abre caminho para o itema
+    //Abre caminho para o item
     Item item;
 
     //Adiciona o item ao slot
@@ -48,6 +49,19 @@ public class InventorySlot : MonoBehaviour
     //Remove do inevtario
     public void OnRemoveButton()
     {
+        //sabe qual a possiçaó do item
+        Vector3 itemNewPosition = new Vector3();
+
+        itemNewPosition.x = player.transform.position.x;
+        itemNewPosition.y = (float)0.63;
+        itemNewPosition.z = player.transform.position.z + (float)1;
+
+        //troca a possição antica pela nova
+        item.gameObject.transform.position = itemNewPosition;
+
+        //faz o item re aparecer
+        item.gameObject.SetActive(true);
+
         //Quando chamado, chama o metedo do iventario e diz para remover X item
         Inventory.instance.Remove(item);
     }

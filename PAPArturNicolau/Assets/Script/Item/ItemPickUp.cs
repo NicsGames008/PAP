@@ -19,7 +19,13 @@ public class ItemPickUp : MonoBehaviour
 
             //SE foi apanhado destroi o msm
             if (wasPickUp)
-                Destroy(gameObject);
+            {
+                item.gameObject = gameObject;
+
+                gameObject.SetActive(false);
+            }
+
+
 
         }
     }

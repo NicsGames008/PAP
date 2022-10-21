@@ -85,8 +85,6 @@ public class ThirdpersonMovement : MonoBehaviour
 
         #endregion
 
-
-
         #region Saltar
         //Ve se carregou na tecla de saltar
         if (Input.GetKeyDown(KeyCode.Space))

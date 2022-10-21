@@ -12,6 +12,8 @@ public class Item : ScriptableObject
     public Sprite icon = null;
     //Sabe se é default
     public bool isDefaulItem = false;
+    //Saber qual é o game object do item
+    public GameObject gameObject;
 
     public virtual void Use()
     {
