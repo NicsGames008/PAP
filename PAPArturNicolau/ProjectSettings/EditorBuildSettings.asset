@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Utilities/Krivodeling/UI/Effects/Blur/Demo/Scenes/Demo.unity
-    guid: ee40342b2af4e4d419016db0cc4093aa
+    path: Assets/Scenes/Menus.unity
+    guid: 0b6e6693542afb848835d6537ac7ce4e
   - enabled: 1
     path: Assets/Scenes/ThirdPersonTest.unity
     guid: cb787ccacc07bc846973496e45e3c483
