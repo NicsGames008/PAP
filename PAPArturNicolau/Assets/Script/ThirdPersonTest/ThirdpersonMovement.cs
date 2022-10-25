@@ -87,7 +87,7 @@ public class ThirdpersonMovement : MonoBehaviour
 
         #region Saltar
         //Ve se carregou na tecla de saltar
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space))
         {
             if (isGrounded)
             {
