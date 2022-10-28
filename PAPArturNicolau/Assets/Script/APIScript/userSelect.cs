@@ -3,18 +3,18 @@ using UnityEngine;
 
 public class userSelect : MonoBehaviour
 {
-    string url = "https://localhost/API/userSelect.php";
+    string url = "http://localhost/API/userSelect.php";
     public string[] userData;
 
     // Start is called before the first frame update
-    IEnumerable Start()
+    IEnumerator Start()
     {
         WWW users = new WWW(url);
         yield return users;
         string userDataString = users.text;
         userData = userDataString.Split(';');
 
-        print(GetValueData(userData[3], "username"));
+        print(GetValueData(userData[0], "UserName"));
     }
 
     string GetValueData(string data, string index)
