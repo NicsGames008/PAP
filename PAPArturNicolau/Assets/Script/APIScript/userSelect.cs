@@ -14,7 +14,7 @@ public class userSelect : MonoBehaviour
         string userDataString = users.text;
         userData = userDataString.Split(';');
 
-        print(GetValueData(userData[0], "UserName"));
+        print(GetValueData(userData[0], "username:"));
     }
 
     string GetValueData(string data, string index)

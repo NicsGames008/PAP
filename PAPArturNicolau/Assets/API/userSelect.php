@@ -1,12 +1,12 @@
 <?php
 include('connection.php');
 
-$sql = "SELECT UserName, PassWord, Email FROM user;"
+$sql = "select UserName, PassWord, Email from user;";
 $result = mysqli_query($connect, $sql);
 
-if (mysql_num_row($result) > 0) {
+if (mysqli_num_rows($result) > 0) {
     while ($row = mysqli_fetch_assoc($result)) {
-        echo "username:".$row['username']."|email:".$row['email']."|password:".$row['PassWord'].";";
+        echo "username:".$row['UserName']."|email:".$row['Email']."|password:".$row['PassWord'].";";
     }
 }
 
