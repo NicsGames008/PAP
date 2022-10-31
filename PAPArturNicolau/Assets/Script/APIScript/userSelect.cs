@@ -3,16 +3,22 @@ using UnityEngine;
 
 public class userSelect : MonoBehaviour
 {
+    //Guarda o dominio da API
     string url = "http://localhost/API/userSelect.php";
+    //Lista que guarda todos os valores da API
     public string[] userData;
 
     // Start is called before the first frame update
     IEnumerator Start()
     {
+        //Executa a API
         WWW users = new WWW(url);
         yield return users;
+        //recebe todos os dados
         string userDataString = users.text;
+        //Guarda na lista
         userData = userDataString.Split(';');
+
 
         print(GetValueData(userData[0], "username:"));
     }

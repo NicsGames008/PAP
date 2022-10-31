@@ -9761,9 +9761,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0dd7013c9f40444a9490047d9200217, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  insertUsername: {fileID: 247266241}
-  insertPassword: {fileID: 170347179}
-  insertEmail: {fileID: 178339787}
+  insertUsername: {fileID: 705980248}
+  insertPassword: {fileID: 987973696}
+  insertEmail: {fileID: 232837823}
+  confirmPassword: {fileID: 1981233613}
 --- !u!1 &1582436889
 GameObject:
   m_ObjectHideFlags: 0
