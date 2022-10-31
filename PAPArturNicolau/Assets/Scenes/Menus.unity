@@ -2871,7 +2871,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 292456045}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1515925456}
+        m_TargetAssemblyTypeName: userInsert, Assembly-CSharp
+        m_MethodName: AddUser
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &292456045
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5479,7 +5491,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705980246}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5490,7 +5502,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -135.00002, y: 76.5}
+  m_AnchoredPosition: {x: -135, y: 76.5}
   m_SizeDelta: {x: 172.0276, y: 37.0485}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &705980248
@@ -8379,7 +8391,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 800, y: -0.000020981}
+  m_AnchoredPosition: {x: 1600, y: -0.000020981}
   m_SizeDelta: {x: 4000, y: 462.58}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1346196782
@@ -9671,6 +9683,7 @@ GameObject:
   - component: {fileID: 1515925453}
   - component: {fileID: 1515925454}
   - component: {fileID: 1515925455}
+  - component: {fileID: 1515925456}
   m_Layer: 5
   m_Name: Register
   m_TagString: Untagged
@@ -9736,6 +9749,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   background: {fileID: 1267979471}
+--- !u!114 &1515925456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1515925452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0dd7013c9f40444a9490047d9200217, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  insertUsername: {fileID: 247266241}
+  insertPassword: {fileID: 170347179}
+  insertEmail: {fileID: 178339787}
 --- !u!1 &1582436889
 GameObject:
   m_ObjectHideFlags: 0
