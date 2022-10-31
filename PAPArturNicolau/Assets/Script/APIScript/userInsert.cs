@@ -1,6 +1,7 @@
 using System;
 using System.Text.RegularExpressions;
 using TMPro;
+using TMPro.EditorUtilities;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -10,6 +11,7 @@ public class userInsert : MonoBehaviour
     string url = "http://localhost/API/userInsert.php";
     //Recebe os valores das caixas
     public TMP_InputField insertUsername, insertPassword, insertEmail, confirmPassword;
+    public GameObject background;
 
 
     public void AddUser()
@@ -53,7 +55,14 @@ public class userInsert : MonoBehaviour
         if (valEmail && valPass && valUsername)
         {
             AddUserDB(insertUsername.text, insertEmail.text, insertPassword.text);
+            BackLogin();
         }
+    }
+
+    //Metedo que muda de tela
+    public void BackLogin()
+    {
+        background.transform.LeanMoveLocal(new Vector3(800, 0, 0), 0.7f).setEaseInBack().setIgnoreTimeScale(true);
     }
 
     #region Adiciona a BD
