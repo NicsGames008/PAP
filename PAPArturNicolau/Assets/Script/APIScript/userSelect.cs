@@ -20,7 +20,7 @@ public class userSelect : MonoBehaviour
         userData = userDataString.Split(';');
 
 
-        print(GetValueData(userData[0], "username:"));
+        //print(GetValueData(userData[1], "password:"));
     }
 
     string GetValueData(string data, string index)
