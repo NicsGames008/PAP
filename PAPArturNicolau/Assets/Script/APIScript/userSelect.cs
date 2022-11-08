@@ -15,7 +15,7 @@ public class userSelect : MonoBehaviour
 
     private void Start()
     {
-        test();
+        StartCoroutine(test());
     }
 
 
@@ -36,7 +36,7 @@ public class userSelect : MonoBehaviour
     public void Login()
     {
         //le mais uma vez a data na API
-        test();
+        StartCoroutine(test());
 
         //tira 1 valor ao tamanhao do arrai para bater certo
         int index = userData.Length - 1;
