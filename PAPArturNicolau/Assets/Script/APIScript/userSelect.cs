@@ -1,8 +1,6 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
-using UnityEngine.InputSystem.Interactions;
-using UnityEngine.UIElements;
 
 public class userSelect : MonoBehaviour
 {
@@ -12,20 +10,25 @@ public class userSelect : MonoBehaviour
     public string[] userData;
     //Caixa de email e passaword que o utilizador pos
     public TMP_InputField insertPassword, insertEmail;
-    public GameObject background,errorUser, errorPassword;
+    public GameObject background, errorUser, errorPassword;
 
-    //Metedo chamado quando o utilizador carrega no butão
-    public void Login()
+    //Ve toda a info na API
+    IEnumerable seeData()
     {
         //Executa a API
         WWW users = new WWW(url);
         /////////////////////////////////////////////////Isto esta errado
-        return;
+        yield return users;
         //recebe todos os dados
         string userDataString = users.text;
         //Guarda na lista
         userData = userDataString.Split(';');
+    }
 
+    //Metedo chamado quando o utilizador carrega no butão
+    public void Login()
+    {
+        //seeData();
 
         //tira 1 valor ao tamanhao do arrai para bater certo
         int index = userData.Length - 1;
@@ -56,7 +59,7 @@ public class userSelect : MonoBehaviour
             }
         }
         //Se nada foi encontrado manda uma mensaguem de erro
-        print("n ha conta");
+        print("não ha conta");
         errorUser.SetActive(true);
     }
 
