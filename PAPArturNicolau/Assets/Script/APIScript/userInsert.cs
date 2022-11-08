@@ -89,7 +89,7 @@ public class userInsert : MonoBehaviour
         }
     }
 
-    //Metedo que muda de tela
+    //Metedo que muda de ecrã
     public void BackLogin()
     {
         background.transform.LeanMoveLocal(new Vector3(800, 0, 0), 0.7f).setEaseInBack().setIgnoreTimeScale(true);

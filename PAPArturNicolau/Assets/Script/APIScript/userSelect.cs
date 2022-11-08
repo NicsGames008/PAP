@@ -1,5 +1,6 @@
 using System.Collections;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class userSelect : MonoBehaviour
@@ -12,12 +13,17 @@ public class userSelect : MonoBehaviour
     public TMP_InputField insertPassword, insertEmail;
     public GameObject background, errorUser, errorPassword;
 
-    //Ve toda a info na API
-    IEnumerable seeData()
+    private void Start()
+    {
+        test();
+    }
+
+
+    //Le toda a data na API
+    IEnumerator test()
     {
         //Executa a API
         WWW users = new WWW(url);
-        /////////////////////////////////////////////////Isto esta errado
         yield return users;
         //recebe todos os dados
         string userDataString = users.text;
@@ -25,10 +31,12 @@ public class userSelect : MonoBehaviour
         userData = userDataString.Split(';');
     }
 
+
     //Metedo chamado quando o utilizador carrega no butão
     public void Login()
     {
-        //seeData();
+        //le mais uma vez a data na API
+        test();
 
         //tira 1 valor ao tamanhao do arrai para bater certo
         int index = userData.Length - 1;
