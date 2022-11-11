@@ -19,6 +19,12 @@ public class userSelect : MonoBehaviour
     }
 
 
+    private void Update()
+    {
+        //le mais uma vez a data na API
+        StartCoroutine(test());
+    }
+
     //Le toda a data na API
     IEnumerator test()
     {
@@ -35,8 +41,7 @@ public class userSelect : MonoBehaviour
     //Metedo chamado quando o utilizador carrega no butão
     public void Login()
     {
-        //le mais uma vez a data na API
-        StartCoroutine(test());
+
 
         //tira 1 valor ao tamanhao do arrai para bater certo
         int index = userData.Length - 1;
