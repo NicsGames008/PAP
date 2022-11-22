@@ -1,7 +1,7 @@
 <?php
 include('connection.php');
 
-$sql = "select UserName, aes_decrypt(PassWord, 'shrek') as PassWord, aes_decrypt(Email, 'shrek') as Email FROM user;";
+$sql = "select UserName, aes_decrypt(PassWord, 'shrek') as PassWord, aes_decrypt(Email, 'shrek') as Email FROM User;";
 $result = mysqli_query($connect, $sql);
 
 if (mysqli_num_rows($result) > 0) {
