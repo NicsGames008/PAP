@@ -1,6 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.IO.LowLevel.Unsafe;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -8,13 +6,11 @@ using UnityEngine.UI;
 public class ChangeInput : MonoBehaviour
 {
     EventSystem system;
-    public Selectable firstInput;
 
     // Start is called before the first frame update
     void Start()
     {
         system = EventSystem.current;
-        firstInput.Select();
     }
 
     // Update is called once per frame
@@ -25,7 +21,7 @@ public class ChangeInput : MonoBehaviour
         {
             //Le qual a proxima caixa
             Selectable next = system.currentSelectedGameObject.GetComponent<Selectable>().FindSelectableOnDown();
-
+            
             //Se hover uma caixa para ser selecionada seleciona
             if (next != null)
             {
@@ -33,5 +29,16 @@ public class ChangeInput : MonoBehaviour
             }
         }
 
+        if (Input.GetKeyDown(KeyCode.Tab) && Input.GetKey(KeyCode.LeftShift))
+        {
+            //Le qual a proxima caixa
+            Selectable previous = system.currentSelectedGameObject.GetComponent<Selectable>().FindSelectableOnUp();
+
+            //Se hover uma caixa para ser selecionada seleciona
+            if (previous != null)
+            {
+                previous.Select();
+            }
+        }
     }
 }
