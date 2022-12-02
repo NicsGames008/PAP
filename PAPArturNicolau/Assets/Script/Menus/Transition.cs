@@ -20,5 +20,15 @@ public class Transition : MonoBehaviour
     {
         background.transform.LeanMoveLocal(new Vector3(0, 0, 0), 0.7f).setEaseInBack().setIgnoreTimeScale(true);
     }
+
+    public void BackCharacterSelect()
+    {
+        background.transform.LeanMoveLocal(new Vector3(-800, 0, 0), 0.7f).setEaseInBack().setIgnoreTimeScale(true);
+    }
+
+    public void CharacterSelect()
+    {
+        background.transform.LeanMoveLocal(new Vector3(-1600, 0, 0), 0.7f).setEaseInBack().setIgnoreTimeScale(true);
+    }
     
 }

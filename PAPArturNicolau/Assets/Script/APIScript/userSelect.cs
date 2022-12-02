@@ -96,6 +96,6 @@ public class userSelect : MonoBehaviour
     //Muda de janela
     public void OperServerSelect()
     {
-        background.transform.LeanMoveLocal(new Vector3(0, 0, 0), 0.7f).setEaseInBack().setIgnoreTimeScale(true);
+        background.transform.LeanMoveLocal(new Vector3(-800, 0, 0), 0.7f).setEaseInBack().setIgnoreTimeScale(true);
     }
 }
